@@ -7,24 +7,37 @@
 </head>
 <body>
      <section class="container">
-        <form class ="form">
-              <fieldset>
-                  <legend>Salary Paycheck Calculator</legend>
-                      <label>
-				           
-			                Salary<input id="salary" type="text" placeholder="4271.00" required="required" />
-			          </label>
-			         
-			          <button>Calc</button>
+       <form class="form">
+        <legend>Salary Paycheck Calculator</legend>
+        <table>
+            <tr>
+                <td>Salary</td>
+                <td><input type="text" name="salary" id="salary" class="salary"></td>
+                <td><button>Calcular</button></td>
+            </tr>
+            <tr>
+                <td>INSS:</td>
+                <td id="inss"></td>
+            </tr>
+            <tr>
+                <td>IRPF:</td>
+                <td id="irpf"></td>
+            </tr>
+            <tr>
+                <td> 
+                    <span class="label">Liquide Salary:</span>
+                </td>
+                <td class="content-result">
                   
-              </fieldset>
-        </form>
+                    
+	        	          <span class="result">0.00</span>
+	                
+                </td>
+           
+            </tr>
+        </table>        
+    </form> 
         
-        	<div class="content-result">
-		        <span class="label">Liquide Salary:</span>
-	        	<span class="result">0.00</span>
-	        </div>
-    
     </section>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>   
 <script src="asset/js/SalaryService.js"></script>

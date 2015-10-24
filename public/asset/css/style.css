@@ -1,71 +1,40 @@
 
-html{
-	font: 13px Arial;
-
-	
+*{
+	font-family: sans-serif;
+	font-size: 13px;
+	color: black;
 }
-.container {
-	width: 320px;
-	
-	margin: 100px auto;
-	background: #fff;
-	border: 2px solid #7F796C;
-	border-radius:10px;
-	min-height: 300px;
-	box-shadow: 3px 3px 4px 0 #CCC;
-
+legend{
+	font-size: 20px;
+	margin-bottom: 5px;
 }
-fieldset{
-    border:none;
+.salary, button{
+	padding: 3 5 3 5;
+	width: 95%;
 }
-legend,
-.label {
-	font-size: 16px;
-	font-weight: bold;
-	color: #333;
-	line-height: 48px;
-	text-align: center;
-	text-transform: uppercase;
-}
-input {
-    text-align: right;
-}
-
-label {
-    color: #333;
-    display: block;
-    font-weight: bold;
+table{
+	width: 97%;
+	border-top-style: solid;
+	border-width: thin;
 	text-align: right;
-    margin-bottom: 20px;
-    margin: 10 auto ;
+	padding-top: 10px;
+	border-color: white;
 }
-
-button, 
-.result {
-	border-radius: 5px;
+button:hover{
+	cursor: hand;
 }
-button {
-   
-    border-radius: 8px;
-    cursor: pointer;
-    display: block;
-    padding: 8px 25px;
-    color: #333;
-	font-weight: bold;
-	margin: 0 auto;
-	box-shadow: 3px 3px 4px 0 #CCC;
-    
+td{
+	padding-top: 15px;
 }
-.content-result {
-	text-align: center;
-}
-.content-result .result {
-	width: 70px;
-	background: #C1D0D9;
-	display: block;
-	font-size: 24px;
-	color: blue;	
-	padding: 12px 15px;
-	margin: 0 auto;
-
+form{
+	margin-top: 5%;
+	margin-left: 35%;
+	border-width: thin;
+	border-style: solid;
+	border-color: white;
+	width: 400px;
+	height: 200px;
+	border-radius: 7px;
+	padding: 15 0 15 10;
+	background-color: #E8E8E8;
 }
