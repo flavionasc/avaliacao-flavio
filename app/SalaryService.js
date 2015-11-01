@@ -25,9 +25,7 @@ var SalaryService = {
         
         
                 //deduçao irpf.
-      
-
-	                  totalIRPF = 0.00;
+                 totalIRPF = 0.0;
 	            
 	             if (baseSalary >= 1903.99 && baseSalary <= 2826.65){
 	                  totalIRPF = (baseSalary * 0.075) - 142.80 ;

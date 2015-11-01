@@ -16,7 +16,7 @@ app.get('/api/salary', function(req, res) {
 	
 	salaryIndex = SalaryService.getSalary(salary);
 	
-	res.send(salaryIndex.toString());
+	res.send(salaryIndex);
 });
 
 var server = app.listen(3000, function () {
