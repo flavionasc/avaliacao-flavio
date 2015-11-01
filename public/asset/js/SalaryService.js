@@ -1,21 +1,19 @@
 var SalaryService = {
 
-	getIndex: function(salary, callback) {
+	getSalary: function(salary, callback) {
 		$.ajax({
 		  url: '/api/salary', //end-point to backend
 		  data: {'salary': salary},
 		  success: function(result) {
-		  	callback(parseFloat(result));
+                for(var i=0; i < result.length; i++){
+                    parseFloat (result[i]);    
+                }
+		  	callback(result);
 		  },
 		  error: function() {
 		  	callback(null);
 		  }
 		});
-	},
-	
-	getDescription: function (index) {
-		//TODO to be implemented
-		return "";
 	}
 	
 };

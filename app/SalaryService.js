@@ -1,57 +1,57 @@
 var SalaryService = {
 
-	getIndex: function(salary) {
-            
+	getSalary: function(salary) {
+        var result = [0,0,0];   
         var totalINSS = 0.0;
-        var totalIRPF = salary-totalINSS;
+        var totalIrpf = 0.0;
+        var baseSalary = salary-totalINSS;
        
-             
+            
+        if (typeof(salary) === 'number'){
                 //deduçao inss.
 	             if(salary < 1399.13){
 
-	                  totalINSS = (salary/100) * 8;
+	                  totalINSS = salary * 0.08;
 	            }
-	             else if (salary > 1399.12 && salary < 2331.89){
-	                  totalINSS = (salary/100) * 9;
+	             else if (salary > 1399.12 && salary <= 2331.88){
+	                  totalINSS = salary * 0.09;
 	             }
-                  else if(salary > 2331.88 && salary < 4663.76){
-                      totalINSS = (salary/100) * 11;
+                  else if(salary >= 2331.89 && salary <= 4663.75){
+                      totalINSS = salary * 0.11;
 	             }
-	               else if(salary > 4663.75){
+	               else{
 	                 totalINSS = 513.02;
 	            }
         
         
                 //deduçao irpf.
       
-        
-                  if(salary < 1903.99){
 
-	                  totalIRPF = 0;
-	            }
-	             else if (salary > 1903.98 && salary < 2826.66){
-	                  totalIRPF =  ((totalIRPF/100)*7.5) - 142.80 ;
+	                  totalIRPF = 0.00;
+	            
+	             if (baseSalary >= 1903.99 && baseSalary <= 2826.65){
+	                  totalIRPF = (baseSalary * 0.075) - 142.80 ;
 	             }
-                  else if(salary > 2826.65 && salary < 3751.06){
-                     totalIRPF =  ((totalIRPF/100)*15) - 354.80 ;
+                  else if(baseSalary >= 2826.66 && baseSalary <= 3751.05){
+                     totalIRPF =  (baseSalary * 0.15) - 354.80 ;
 	             }
-                  else if(salary > 3751.05 && salary < 4664.69){
-                      totalIRPF =  ((totalIRPF/100)*22.5) - 636.13 ;
+                  else if(baseSalary >= 3751.06 && baseSalary <= 4664.68){
+                      totalIRPF =  (baseSalary * 0.225) - 636.13 ;
 	             }
-	               else {
-	                 totalIRPF = ((totalIRPF/100)*27.5)- 869.36;
+	               else if(baseSalary > 4664.68){
+	                 totalIRPF = (baseSalary * 0.275) - 869.36;
 	            }
         
-        return totalINSS;
-        return totalIRPF;
-        return (salary - totalINSS)-totalIRPF;
-      },
+               result[0]=totalINSS.toFixed(2);
+               result[1]=totalIRPF.toFixed(2);
+               result[2]=(salary - totalINSS)-totalIRPF.toFixed(2);
+        
+        
+            return result;
+      }
+        return null;
+    }
 
- 
-	getDescription: function (index) {
-		//TODO to be implemented
-		return "";
-	}
 	
 };
 

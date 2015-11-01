@@ -16,24 +16,24 @@ var SalaryController = {
 	calculateSalary: function(form) {
 		var 
 			salary = parseFloat(form.salary.value),
-			result = 0;
+            result = [0,0,0]
 		
 		var callback = function(result) {
 			SalaryController.showResult(result);			
 		};
 		
-		SalaryController.showLoading(true);
-		SalaryService.getIndex(salary, callback);
+		SalaryService.getSalary(salary, callback);
 	},
 	
 	showResult: function(result) {
-		var spanResult = document.querySelector('.result');
-		spanResult.innerHTML = result.toFixed(2);
-		SalaryController.showLoading(false);
-	},
-	
-	showLoading: function(isLoading) {
-		document.querySelector('.label').innerHTML = isLoading ? 'loading...' : 'Result'
+		var INSSResult = document.querySelector('.INSS');
+         INSSResult.innerHTML = result[0];
+        var IRPFResult = document.querySelector('.IRPF');
+         IRPFResult.innerHTML = result[1];
+        var liquid = document.querySelector('.liquid');
+         liquid.innerHTML = result[2];
+        //spanResult.innerHTML = result.toFixed(2);
+       
 	}
 
 };

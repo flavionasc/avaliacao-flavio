@@ -14,7 +14,7 @@ app.get('/api/salary', function(req, res) {
 		SalaryService = require('./app/SalaryService'),
 		salaryIndex = 0;
 	
-	salaryIndex = SalaryService.getIndex(salary);
+	salaryIndex = SalaryService.getSalary(salary);
 	
 	res.send(salaryIndex.toString());
 });
